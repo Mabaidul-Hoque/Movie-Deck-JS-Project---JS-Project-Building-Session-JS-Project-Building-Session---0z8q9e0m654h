@@ -10,12 +10,20 @@ header {
   background-color: #333;
   color: white;
   padding: 20px;
-  text-align: left;
+  text-align: center;
 }
-
+a > h1{
+  font-size: 50px;
+}
 header > a {
   color: white;
   text-decoration: none;
+}
+
+/* Main section */
+body{
+  background: rgb(84,80,136);
+  background: linear-gradient(360deg, rgba(84,80,136,1) 53%, rgba(42,137,162,1) 100%, rgba(67,215,174,1) 100%);
 }
 
 /* Style the search bar element */
@@ -28,26 +36,41 @@ header > a {
 /* Style the input element */
 #search-input {
   width: 300px;
-  height: 30px;
+  height: 40px;
   border: 1px solid #333;
   border-radius: 5px;
   margin-right: 10px;
-  padding: 0 7px;
+  padding: 0 20px;
+  transition: 0.3s ease-in-out;
+}
+#search-input:hover{
+  scale: 1.04;
+  border: 1px solid green;
+}
+#search-input:focus{
+  border: 1px solid green;
+  outline: none;
 }
 
 #search-input::placeholder {
   font-family: inherit;
+  font-size: 16px;
 }
 
 /* Style the button element */
 #search-button {
   width: 100px;
-  height: 33px;
+  height: 40px;
   border: none;
   border-radius: 5px;
   background-color: #333;
   color: white;
   cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+#search-button:hover{
+  scale: 1.02;
+  background-color: rgb(156, 88, 170);
 }
 
 /* Style the sorting options element */
@@ -123,12 +146,14 @@ header > a {
   object-fit: cover;
 }
 
+
 /* Style the title element */
 .title {
   font-size: 16px;
   font-weight: bold;
   text-align: center;
   margin-bottom: 10px;
+  color: whitesmoke;
 }
 
 .vote-favouriteIcon {
@@ -140,6 +165,7 @@ header > a {
 .vote-count,
 .vote-average {
   font-size: 14px;
+  color: whitesmoke;
 }
 
 /* Style the favorite icon element */
@@ -150,6 +176,11 @@ header > a {
   display: flex;
   place-items: center;
   margin-top: 15px;
+  color: tomato;
+  transition: 0.5s ease-in-out;
+}
+.favorite-icon:hover{
+  scale: 1.1;
 }
 
 .pagination {
@@ -166,6 +197,9 @@ header > a {
   border-radius: 5px;
   cursor: pointer;
 }
+#page-number-button{
+  cursor: default;
+}
 
 /* Style the footer element */
 footer {
@@ -173,4 +207,32 @@ footer {
   color: white;
   padding: 10px;
   text-align: center;
+}
+
+/* TOP ANDBOTTOM NAVIGATION */
+.top-navigator{
+  position: relative;
+}
+.bottom-navigator {
+  display: none;
+}
+.fa-circle-chevron-up, 
+.fa-circle-chevron-down{
+    position: fixed;
+    right: 25px;
+    top: 90vh;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+/* media quries */
+
+@media screen and (max-width: 500px) {
+  header > h1{
+    font-size: 40px;
+  }
+  .sorting-options{
+    flex-direction: column;
+    align-items: center;
+  }
 }
